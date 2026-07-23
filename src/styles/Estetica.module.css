@@ -1,0 +1,162 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: #f4f6f9;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 520px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.formContainer {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  height: 1123px;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+}
+
+.previewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.generateButton {
+  padding: 0.9rem 2.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #0451d7;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.generateButton:hover {
+  background: #1b6cff;
+}
+
+/* =============================== */
+/* TABLET */
+/* =============================== */
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .formContainer {
+    height: auto;
+    overflow: visible;
+  }
+
+  .previewContainer {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: center;
+  }
+}
+
+/* =============================== */
+/* MOBILE */
+/* =============================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .content {
+    gap: 1.5rem;
+  }
+
+  .formContainer {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .previewContainer {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+
+  .actions {
+    margin-top: 1.5rem;
+  }
+
+  .generateButton {
+    width: 100%;
+  }
+}
+
+/* =============================== */
+/* MOBILE PEQUEÑO */
+/* =============================== */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .formContainer {
+    padding: 1rem;
+  }
+}

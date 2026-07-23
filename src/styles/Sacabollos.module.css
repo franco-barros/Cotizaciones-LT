@@ -1,0 +1,241 @@
+/* Sacabollos.module.css */
+
+.container {
+  min-height: 100vh;
+
+  padding: 2rem;
+
+  background: #f4f6f9;
+
+  box-sizing: border-box;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+
+  font-weight: 700;
+
+  color: #1f2937;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+
+  color: #6b7280;
+
+  font-size: 1rem;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content {
+  display: grid;
+
+  grid-template-columns: 520px 1fr;
+
+  gap: 2rem;
+
+  align-items: start;
+
+  width: 100%;
+}
+
+/* ===========================
+   FORM CONTAINER
+=========================== */
+
+.formContainer {
+  height: 1880px;
+
+  overflow-y: auto;
+
+  padding: 2rem;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+.formContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.formContainer::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+
+  border-radius: 20px;
+}
+
+.formContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===========================
+   PREVIEW
+=========================== */
+
+.previewContainer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  width: 100%;
+
+  min-width: 0;
+
+  overflow-x: auto;
+
+  overflow-y: visible;
+}
+
+.previewContainer > div {
+  flex-shrink: 0;
+}
+
+/* ===========================
+   ACTIONS
+=========================== */
+
+.actions {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 2rem;
+}
+
+.generateButton {
+  padding: 0.9rem 2.5rem;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #0451d7;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.generateButton:hover {
+  background: #1b6cff;
+}
+
+.generateButton:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media (max-width: 1400px) {
+  .content {
+    grid-template-columns: 480px 1fr;
+  }
+}
+
+/* ===========================
+   MOBILE / TABLET
+=========================== */
+
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .formContainer {
+    height: auto;
+
+    max-height: none;
+
+    overflow: visible;
+  }
+
+  .previewContainer {
+    justify-content: flex-start;
+
+    overflow-x: auto;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .formContainer {
+    padding: 1.25rem;
+
+    border-radius: 12px;
+  }
+
+  .generateButton {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   MOBILE PEQUEÑO
+=========================== */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .formContainer {
+    padding: 1rem;
+  }
+}

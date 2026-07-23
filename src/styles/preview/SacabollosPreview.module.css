@@ -1,0 +1,472 @@
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 30px;
+
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* ===========================
+   PAGINA
+=========================== */
+
+.page {
+  width: 730px;
+  height: 1240px;
+
+  flex-shrink: 0;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.1rem;
+
+  overflow: hidden;
+
+  page-break-after: always;
+
+  break-after: page;
+}
+
+.page:last-child {
+  page-break-after: auto;
+
+  break-after: auto;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+  background: #010101;
+
+  margin: -35px -35px 0;
+
+  padding: 25px 35px;
+
+  box-sizing: border-box;
+
+  width: calc(100% + 70px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 3px solid #0451d7;
+
+  border-radius: 8px 8px 0 0;
+}
+
+.logoContainer {
+  display: flex;
+
+  align-items: center;
+
+  max-width: 50%;
+}
+
+.logoContainer img {
+  object-fit: contain;
+}
+
+.headerInfo {
+  text-align: right;
+}
+
+.header h1 {
+  font-size: 1.7rem;
+
+  color: #f8f8f8;
+
+  margin: 0;
+
+  font-weight: 700;
+}
+
+.header p {
+  margin-top: 0.4rem;
+
+  color: #0451d7;
+
+  letter-spacing: 3px;
+
+  font-size: 1.05rem;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+.section {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+}
+
+.section h3 {
+  border-left: 4px solid #0451d7;
+
+  padding-left: 0.75rem;
+
+  color: #1f2937;
+
+  margin: 0;
+
+  font-size: 1rem;
+}
+
+/* ===========================
+   ROW
+=========================== */
+
+.row {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 0.5rem;
+
+  overflow-wrap: anywhere;
+
+  font-size: 0.92rem;
+}
+
+.row span:first-child {
+  display: flex;
+
+  align-items: baseline;
+
+  flex: 1;
+
+  white-space: nowrap;
+
+  color: #374151;
+
+  font-weight: 600;
+}
+
+.row span:first-child::after {
+  content: "";
+
+  flex: 1;
+
+  border-bottom: 1px dotted #9ca3af;
+
+  margin: 0 6px 3px;
+}
+
+.row span:last-child {
+  flex: 0 0 auto;
+
+  color: #1f2937;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 0.7rem;
+
+  font-size: 0.92rem;
+}
+
+.grid p {
+  margin: 0;
+
+  overflow-wrap: anywhere;
+}
+
+/* ===========================
+   OBSERVACIONES
+=========================== */
+
+.description {
+  min-height: 70px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  padding: 0.8rem;
+
+  color: #6b7280;
+
+  overflow-wrap: anywhere;
+
+  font-size: 0.92rem;
+}
+
+/* ===========================
+   DAÑO VEHICULO
+=========================== */
+
+.damageSection {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.8rem;
+}
+
+.damageHeader {
+  display: flex;
+
+  justify-content: center;
+}
+
+.damageHeader h2 {
+  margin: 0;
+
+  font-size: 1.1rem;
+
+  color: #1f2937;
+}
+
+/* ===========================
+   PRESUPUESTO
+=========================== */
+
+.total {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 1rem;
+
+  background: #f3f4f6;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+}
+
+.rowPlain {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 0.92rem;
+}
+
+/* ===========================
+   GARANTÍA
+=========================== */
+
+.warranty {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  padding: 1rem;
+
+  border: 1px solid #d1d5db;
+
+  border-left: 4px solid #0451d7;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+}
+
+.warranty h3 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 1rem;
+}
+
+.warranty p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  text-align: justify;
+}
+
+/* ===========================
+   INFORMACION EXTRA
+=========================== */
+
+.infoBox {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  padding: 1rem;
+
+  border: 1px solid #d1d5db;
+
+  border-left: 4px solid #0451d7;
+
+  border-radius: 8px;
+
+  background: #fafafa;
+}
+
+.infoBox h3 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 1rem;
+}
+
+.infoBox ul,
+.infoBox ol {
+  margin: 0;
+
+  padding-left: 1.3rem;
+
+  color: #4b5563;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+.infoBox li {
+  margin-bottom: 0.35rem;
+}
+
+.infoBox p {
+  margin: 0;
+
+  color: #4b5563;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  text-align: justify;
+}
+
+/* ===========================
+   FIRMA
+=========================== */
+
+.signature {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: auto;
+}
+
+.signatureCompany {
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+.signatureImage {
+  object-fit: contain;
+
+  margin: 4px 0;
+}
+
+.signatureName {
+  font-size: 0.8rem;
+
+  color: #4b5563;
+
+  border-top: 1px solid #9ca3af;
+
+  padding-top: 4px;
+
+  min-width: 160px;
+
+  text-align: center;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+  margin-top: auto;
+
+  border-top: 1px solid #d1d5db;
+
+  padding-top: 1rem;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 0.85rem;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 850px) {
+  .wrapper {
+    padding: 0 12px;
+  }
+}
+
+/* ===========================
+   PRINT
+=========================== */
+
+@media print {
+  .wrapper {
+    gap: 0;
+  }
+
+  .page {
+    width: 210mm;
+
+    min-height: 297mm;
+
+    height: auto;
+
+    margin: 0;
+
+    box-shadow: none;
+
+    border-radius: 0;
+  }
+}
