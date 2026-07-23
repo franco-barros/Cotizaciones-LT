@@ -10,6 +10,7 @@ export interface CotizacionData {
   descripcion: string;
   valor: string;
   fecha: string;
+  garantia: string;
   fechaTurno: string;
   horario: string;
 }
