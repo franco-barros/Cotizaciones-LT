@@ -35,6 +35,7 @@ const initialData: CotizacionData = {
 
 export default function Estetica() {
   const [data, setData] = useState<CotizacionData>(initialData);
+  const [loadingPdf, setLoadingPdf] = useState(false);
 
   const handleChange = (e: FormChangeEvent) => {
     setData((prev) => ({
@@ -44,7 +45,15 @@ export default function Estetica() {
   };
 
   const handleGeneratePdf = async () => {
-    await generatePdf("estetica-preview", "Cotizacion-Estetica-Vehicular");
+    try {
+      setLoadingPdf(true);
+
+      await generatePdf("estetica-preview", "Cotizacion-Estetica-Vehicular");
+    } catch (error) {
+      console.error("Error al generar PDF:", error);
+    } finally {
+      setLoadingPdf(false);
+    }
   };
 
   return (
@@ -74,8 +83,9 @@ export default function Estetica() {
           type="button"
           className={styles.generateButton}
           onClick={handleGeneratePdf}
+          disabled={loadingPdf}
         >
-          Generar PDF
+          {loadingPdf ? "Generando..." : "Generar PDF"}
         </button>
       </div>
     </main>

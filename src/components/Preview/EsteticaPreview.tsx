@@ -13,7 +13,7 @@ interface Props {
 export default function EsteticaPreview({ data }: Readonly<Props>) {
   return (
     <div className={styles.wrapper}>
-      <div id="estetica-preview" className={styles.page}>
+      <div id="estetica-preview" data-pdf-page className={styles.page}>
         <header className={styles.header}>
           <div className={styles.logoContainer}>
             <Image
@@ -90,8 +90,6 @@ export default function EsteticaPreview({ data }: Readonly<Props>) {
           </div>
         </section>
 
-        {/* ================= TURNO ================= */}
-
         <section className={styles.section}>
           <h3>Turno</h3>
 
@@ -123,7 +121,7 @@ export default function EsteticaPreview({ data }: Readonly<Props>) {
 
           <p className={styles.disclaimer}>
             <strong>
-              LT Estética Vehicular • Documento no válido como factura{" "}
+              LT Estética Vehicular • Documento no válido como factura
             </strong>
           </p>
         </footer>
