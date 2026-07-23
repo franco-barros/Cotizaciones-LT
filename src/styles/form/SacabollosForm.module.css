@@ -1,8 +1,11 @@
 .form {
   display: flex;
   flex-direction: column;
+
   gap: 1.5rem;
-  height: 1400px;
+
+  width: 100%;
+  min-height: 0;
 }
 
 /* ===========================
@@ -12,9 +15,13 @@
 .card {
   display: flex;
   flex-direction: column;
+
   gap: 1.5rem;
 
-  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: clamp(1rem, 3vw, 1.5rem);
 
   background: #ffffff;
 
@@ -23,8 +30,7 @@
 
   transition:
     border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    box-shadow 0.25s ease;
 }
 
 .card:last-child {
@@ -42,12 +48,15 @@
 
 .cardHeader {
   padding-bottom: 1rem;
+
   border-bottom: 1px solid #eef2f7;
 }
 
 .cardTitle {
   display: flex;
+
   align-items: center;
+
   gap: 1rem;
 }
 
@@ -71,7 +80,8 @@
 .cardHeader h2 {
   margin: 0;
 
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+
   font-weight: 700;
 
   color: #111827;
@@ -93,7 +103,9 @@
 
 .row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
   gap: 1.25rem;
 }
 
@@ -103,13 +115,19 @@
 
 .group {
   display: flex;
+
   flex-direction: column;
+
   gap: 0.55rem;
+
+  min-width: 0;
 }
 
 .group label {
   font-size: 0.92rem;
+
   font-weight: 600;
+
   color: #374151;
 }
 
@@ -121,44 +139,39 @@
 .group textarea,
 .group select {
   width: 100%;
-
-  padding: 0.95rem 1rem;
+  max-width: 100%;
 
   box-sizing: border-box;
 
+  padding: 0.95rem 1rem;
+
   border: 1px solid #d1d5db;
+
   border-radius: 10px;
 
   background: #fafafa;
 
   color: #111827;
+
   font-size: 0.95rem;
 
   outline: none;
-
-  transition:
-    background 0.2s,
-    border-color 0.2s,
-    box-shadow 0.2s;
-}
-
-.group input::placeholder,
-.group textarea::placeholder {
-  color: #9ca3af;
 }
 
 .group textarea {
   min-height: 140px;
-  resize: vertical;
-  line-height: 1.6;
-}
 
-.group select {
-  cursor: pointer;
+  resize: vertical;
+
+  line-height: 1.6;
 }
 
 .garantiaGroup textarea {
   min-height: 120px;
+}
+
+.group select {
+  cursor: pointer;
 }
 
 /* ===========================
@@ -169,6 +182,7 @@
 .group textarea:hover,
 .group select:hover {
   background: #ffffff;
+
   border-color: #b6c2d2;
 }
 
@@ -183,46 +197,32 @@
 }
 
 /* ===========================
-   NUMBER INPUT
+   VEHICULO OPTIONS
 =========================== */
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  margin: 0;
-}
-
-/* ===========================
-   SCROLLBAR
-=========================== */
-
-.form::-webkit-scrollbar {
-  width: 8px;
-}
-
-.form::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.form::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 20px;
-}
 
 .vehiculoOptions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
   gap: 0.75rem;
 }
 
 .vehiculoCard {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
+  justify-content: center;
+
   gap: 0.5rem;
 
   padding: 1.25rem 1rem;
 
   border: 1.5px solid #d1d5db;
+
   border-radius: 12px;
 
   background: #fafafa;
@@ -239,29 +239,45 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .vehiculoCard:hover {
   border-color: #0451d7;
+
   color: #0451d7;
 }
 
 .vehiculoCard span {
   font-size: 0.9rem;
+
   font-weight: 600;
 }
 
 .vehiculoCardActive {
   border-color: #0451d7;
+
   background: rgba(4, 81, 215, 0.06);
+
   color: #0451d7;
 }
 
-/* =========================== 
-   RESPONSIVE
+/* ===========================
+   SCROLLBAR
 =========================== */
 
-@media (max-width: 900px) {
-  .row {
-    grid-template-columns: 1fr;
-  }
+.form::-webkit-scrollbar {
+  width: 8px;
 }
+
+.form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.form::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+
+  border-radius: 20px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
 
 @media (max-width: 768px) {
   .form {
@@ -269,11 +285,7 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   .card {
-    padding: 1.25rem;
-  }
-
-  .card:last-child {
-    margin-bottom: 0;
+    border-radius: 14px;
   }
 
   .cardTitle {
@@ -282,32 +294,47 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .icon {
     width: 42px;
+
     height: 42px;
   }
-
-  .cardHeader h2 {
-    font-size: 1.05rem;
-  }
 }
+
+/* ===========================
+   MOBILE
+=========================== */
 
 @media (max-width: 480px) {
   .card {
     padding: 1rem;
+
+    border-radius: 12px;
   }
 
   .cardTitle {
-    gap: 0.8rem;
+    gap: 0.75rem;
   }
 
   .icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 10px;
+  }
+
+  .cardHeader p {
+    font-size: 0.85rem;
   }
 
   .group input,
   .group textarea,
   .group select {
-    padding: 0.85rem 0.9rem;
+    padding: 0.8rem 0.85rem;
+
+    font-size: 0.9rem;
+  }
+
+  .vehiculoCard {
+    padding: 1rem 0.75rem;
   }
 }

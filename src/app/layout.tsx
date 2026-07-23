@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "Sistema de cotizaciones para LT Estética Vehicular. Detailing, tratamientos cerámicos y reparación estética automotriz.",
 
   icons: {
-    icon: "/images/LtLogo.png",
-    shortcut: "/images/LtLogo.png",
-    apple: "/images/LtLogo.png",
+    icon: "/images/LogoColorLt.png",
+    shortcut: "/images/LogoColorLt.png",
+    apple: "/images/LogoColorLt.png",
   },
 
   openGraph: {

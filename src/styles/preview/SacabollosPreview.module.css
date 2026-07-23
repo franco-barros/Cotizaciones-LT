@@ -71,6 +71,8 @@
 
   justify-content: space-between;
 
+  gap: 1rem;
+
   border-bottom: 3px solid #0451d7;
 
   border-radius: 8px 8px 0 0;
@@ -86,10 +88,16 @@
 
 .logoContainer img {
   object-fit: contain;
+
+  max-width: 100%;
+
+  height: auto;
 }
 
 .headerInfo {
   text-align: right;
+
+  min-width: 0;
 }
 
 .header h1 {
@@ -100,6 +108,8 @@
   margin: 0;
 
   font-weight: 700;
+
+  overflow-wrap: anywhere;
 }
 
 .header p {
@@ -150,6 +160,8 @@
   overflow-wrap: anywhere;
 
   font-size: 0.92rem;
+
+  min-width: 0;
 }
 
 .row span:first-child {
@@ -164,6 +176,8 @@
   color: #374151;
 
   font-weight: 600;
+
+  min-width: 0;
 }
 
 .row span:first-child::after {
@@ -180,6 +194,8 @@
   flex: 0 0 auto;
 
   color: #1f2937;
+
+  overflow-wrap: anywhere;
 }
 
 /* ===========================
@@ -257,6 +273,8 @@
 
   justify-content: space-between;
 
+  gap: 1rem;
+
   padding: 1rem;
 
   background: #f3f4f6;
@@ -270,6 +288,8 @@
   display: flex;
 
   justify-content: space-between;
+
+  gap: 1rem;
 
   font-size: 0.92rem;
 }
@@ -314,6 +334,8 @@
   line-height: 1.6;
 
   text-align: justify;
+
+  overflow-wrap: anywhere;
 }
 
 /* ===========================
@@ -373,6 +395,8 @@
   line-height: 1.6;
 
   text-align: justify;
+
+  overflow-wrap: anywhere;
 }
 
 /* ===========================
@@ -397,12 +421,16 @@
   font-weight: 600;
 
   color: #1f2937;
+
+  text-align: center;
 }
 
 .signatureImage {
   object-fit: contain;
 
   margin: 4px 0;
+
+  max-width: 100%;
 }
 
 .signatureName {
@@ -438,12 +466,100 @@
 }
 
 /* ===========================
-   RESPONSIVE
+   TABLET
 =========================== */
 
 @media (max-width: 850px) {
   .wrapper {
     padding: 0 12px;
+  }
+
+  .page {
+    width: 100%;
+
+    max-width: 730px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 600px) {
+  .wrapper {
+    gap: 20px;
+  }
+
+  .page {
+    width: 100%;
+
+    height: auto;
+
+    min-height: auto;
+
+    padding: 20px;
+
+    border-radius: 10px;
+  }
+
+  .header {
+    margin: -20px -20px 0;
+
+    width: calc(100% + 40px);
+
+    padding: 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .logoContainer {
+    max-width: 80%;
+  }
+
+  .headerInfo {
+    text-align: left;
+  }
+
+  .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .header p {
+    font-size: 0.85rem;
+
+    letter-spacing: 2px;
+  }
+
+  .row {
+    flex-direction: column;
+
+    gap: 0.2rem;
+  }
+
+  .row span:first-child {
+    white-space: normal;
+  }
+
+  .row span:first-child::after {
+    display: none;
+  }
+
+  .total,
+  .rowPlain {
+    flex-direction: column;
+
+    gap: 0.5rem;
+  }
+
+  .warranty,
+  .infoBox {
+    padding: 0.85rem;
   }
 }
 
