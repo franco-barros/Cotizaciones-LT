@@ -27,6 +27,7 @@ const initialData: CotizacionData = {
   valor: "",
 
   fecha: "",
+  fechaTurno: "",
   horario: "",
 
   garantia: "",
